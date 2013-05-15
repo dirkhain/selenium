@@ -1,4 +1,4 @@
-package de.dirkhain.test.selenium;
+package de.dirkhain.test.selenium.sample;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

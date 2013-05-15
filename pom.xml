@@ -4,9 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.dirkhain.test.selenium</groupId>
+    <groupId>selenium</groupId>
     <artifactId>selenium</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>context</module>
+        <module>sample</module>
+    </modules>
 
 
     <properties>
@@ -30,28 +36,27 @@
         </plugins>
     </build>
 
-    <dependencies>
+    <dependencyManagement>
+        <dependencies>
 
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-server</artifactId>
-            <version>${selenium-version}</version>
-            <scope>test</scope>
-        </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-server</artifactId>
+                <version>${selenium-version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium-version}</version>
-            <scope>test</scope>
-        </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>${selenium-version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testng-version}</version>
-            <scope>test</scope>
-        </dependency>
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng-version}</version>
+            </dependency>
 
-    </dependencies>
+        </dependencies>
+    </dependencyManagement>
 </project>

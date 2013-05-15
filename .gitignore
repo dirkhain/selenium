@@ -8,4 +8,4 @@
 
 chromedriver.log
 .idea/
-target/*
+**/target/*
