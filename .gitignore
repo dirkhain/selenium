@@ -1,6 +1,11 @@
+*.iml
 *.class
 
 # Package Files #
 *.jar
 *.war
 *.ear
+
+chromedriver.log
+.idea/
+target/*

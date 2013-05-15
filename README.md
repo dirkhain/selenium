@@ -1,4 +1,4 @@
-selenium
-========
+Selenium Example
+================
 
 Sample selenium framework
