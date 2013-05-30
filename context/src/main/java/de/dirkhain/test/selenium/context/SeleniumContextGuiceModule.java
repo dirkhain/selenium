@@ -10,7 +10,6 @@ import java.io.IOException;
  */
 public class SeleniumContextGuiceModule implements Module {
 
-    @Override
     public void configure(Binder binder) {
         SeleniumContext context = null;
         try {
