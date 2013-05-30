@@ -21,7 +21,7 @@ public class ChromeSeleniumTest extends BaseSeleniumTest {
         };
     }
 
-    @Test(dataProvider = "searchData", enabled = false)
+    @Test(dataProvider = "searchData")
     public void testGoogleSearch(String url, String element, String term, String title)
             throws InterruptedException {
         context.getChrome().get(url);
