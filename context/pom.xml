@@ -28,6 +28,11 @@
             <artifactId>guice</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.opera</groupId>
+            <artifactId>operadriver</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

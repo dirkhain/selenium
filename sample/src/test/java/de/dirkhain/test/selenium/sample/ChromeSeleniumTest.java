@@ -2,10 +2,6 @@ package de.dirkhain.test.selenium.sample;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.service.DriverService;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -28,12 +24,9 @@ public class ChromeSeleniumTest extends BaseSeleniumTest {
     @Test(dataProvider = "searchData")
     public void testGoogleSearch(String url, String element, String term, String title)
             throws InterruptedException {
-        context.getChromeDriver().get(url);
-        Thread.sleep(2000);
-        WebElement searchBox = context.getChromeDriver().findElement(By.name(element));
-        Thread.sleep(2000);
+        context.getChrome().get(url);
+        WebElement searchBox = context.getChrome().findElement(By.name(element));
         searchBox.sendKeys(term);
-        Thread.sleep(2000);
-        Assert.assertEquals(context.getChromeDriver().getTitle(), title);
+        Assert.assertEquals(context.getChrome().getTitle(), title);
     }
 }

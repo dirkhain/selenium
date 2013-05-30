@@ -10,8 +10,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  */
 public interface SeleniumContext {
 
-    public ChromeDriverService getChrome();
+    public ChromeDriverService getChromeService();
     public FirefoxDriver getFirefox();
-    public WebDriver getChromeDriver();
+    public WebDriver getChrome();
+    public WebDriver getOpera();
 
 }

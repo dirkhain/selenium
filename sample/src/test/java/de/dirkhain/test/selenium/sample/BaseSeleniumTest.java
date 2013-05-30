@@ -15,10 +15,10 @@ public class BaseSeleniumTest {
     @Inject
     SeleniumContext context;
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void createAndStopService() {
-        context.getChromeDriver().quit();
-        context.getChrome().stop();
+        context.getChrome().quit();
+        context.getChromeService().stop();
         context.getFirefox().kill();
     }
 

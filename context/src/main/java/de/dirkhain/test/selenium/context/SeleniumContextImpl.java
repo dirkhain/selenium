@@ -1,5 +1,6 @@
 package de.dirkhain.test.selenium.context;
 
+import com.opera.core.systems.OperaDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -17,20 +18,22 @@ public class SeleniumContextImpl implements SeleniumContext {
     private ChromeDriverService chromeDriverService;
     private FirefoxDriver firefoxDriver;
     private WebDriver chromeWebDriver;
+    private WebDriver operaDriver;
 
-    @Override
-    public ChromeDriverService getChrome() {
+    public ChromeDriverService getChromeService() {
         return chromeDriverService;
     }
 
-    @Override
     public FirefoxDriver getFirefox() {
         return firefoxDriver;
     }
 
-    @Override
-    public WebDriver getChromeDriver() {
+    public WebDriver getChrome() {
         return chromeWebDriver;
+    }
+
+    public WebDriver getOpera() {
+        return operaDriver;
     }
 
     public SeleniumContextImpl() throws IOException {
@@ -48,6 +51,9 @@ public class SeleniumContextImpl implements SeleniumContext {
         }
         if(firefoxDriver == null) {
             firefoxDriver = new FirefoxDriver();
+        }
+        if(operaDriver == null) {
+            operaDriver = new OperaDriver();
         }
     }
 }
