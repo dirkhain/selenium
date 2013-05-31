@@ -22,6 +22,7 @@
         <testng-version>6.8</testng-version>
         <guice-version>2.0</guice-version>
         <webdriver.chrome>/opt/tools/selenium/chromedriver/chromedriver</webdriver.chrome>
+        <browsers>chrome</browsers>
     </properties>
 
     <build>
@@ -32,6 +33,7 @@
                 <configuration>
                     <systemPropertyVariables>
                         <webdriver.chrome.driver>${webdriver.chrome}</webdriver.chrome.driver>
+                        <test.browsers>${browsers}</test.browsers>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

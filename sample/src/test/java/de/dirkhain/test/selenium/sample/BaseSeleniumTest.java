@@ -3,6 +3,7 @@ package de.dirkhain.test.selenium.sample;
 import com.google.inject.Inject;
 import de.dirkhain.test.selenium.context.SeleniumContext;
 import de.dirkhain.test.selenium.context.SeleniumContextGuiceModule;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Guice;
 
@@ -17,9 +18,12 @@ public class BaseSeleniumTest {
 
     @AfterSuite(alwaysRun = true)
     public void createAndStopService() {
-        context.getChrome().quit();
-        context.getChromeService().stop();
-        context.getFirefox().kill();
+        for(WebDriver driver : context.getWebdrivers()) {
+            driver.quit();
+        }
+        if(context.getChromeService() != null) {
+            context.getChromeService().stop();
+        }
     }
 
 }
